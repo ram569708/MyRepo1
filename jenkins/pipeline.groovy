@@ -6,8 +6,8 @@ pipeline{
   stages{
     stage("Build"){
       steps{
-        sh "mvn --version"
         echo "Running my custom BUILD stage..."
+        bat "mvn clean install -Dmaven.test.skip=true"
       }
     }
   }
